@@ -15,7 +15,6 @@ if (is_dir($dir)) {
 		}
 		closedir($diretorio);
 	}
-	
 	for ($i=0; $i < count($arquivos); $i++) {
 		array_push($comp, substr($arquivos[$i]->Nfse->InfNfse->Competencia->__toString(), 0, 7));
 		$resultado[$comp[$i]]["ValorServicos"] += $arquivos[$i]->Nfse->InfNfse->Servico->Valores->ValorServicos->__toString();
@@ -25,9 +24,7 @@ if (is_dir($dir)) {
 		$resultado[$comp[$i]]["BaseCalculo"] += $arquivos[$i]->Nfse->InfNfse->Servico->Valores->BaseCalculo->__toString();
 		$resultado[$comp[$i]]["ValorLiquidoNfse"] += $arquivos[$i]->Nfse->InfNfse->Servico->Valores->ValorLiquidoNfse->__toString();
 	}
-
 	ksort($resultado);
-
 }
 
 ?>
